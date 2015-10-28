@@ -10,6 +10,7 @@ require_once 'Concentrate/Filter/Abstract.php';
 require_once 'Concentrate/Filter/CSSMover.php';
 require_once 'Concentrate/Filter/Minifier/Abstract.php';
 require_once 'Concentrate/Filter/Minifier/YUICompressor.php';
+require_once 'Concentrate/Filter/Minifier/AMQPSyncQueue.php';
 
 /**
  * @category  Tools
@@ -262,7 +263,12 @@ class Concentrate_CLI
 			$this->display(PHP_EOL . 'Writing minified files:' . PHP_EOL);
 		}
 
-		$filter = new Concentrate_Filter_Minifier_YUICompressor();
+		$filter = new Concentrate_Filter_Minifier_AMQPSyncQueue(
+			array(
+				'host' => 'blood'
+			)
+		);
+
 		$this->writeMinifiedFilesFromDirectory($filter);
 
 		if ($this->compile) {
