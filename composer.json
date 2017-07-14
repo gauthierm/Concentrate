@@ -1,41 +1,41 @@
 {
-	"name": "silverorange/concentrate",
-	"description" : "This package provides a command-line tool to glob and minify static resources for a website using silverorange's Site package. Files are combined according to a configuration file passed on the command-line.",
-	"type": "library",
-	"keywords": [ "bundle", "minification", "css", "javascript", "less" ],
-	"homepage": "https://github.com/silverorange/Concentrate",
-	"license": "LGPL-2.1",
-	"authors": [
-		{
-			"name"  : "Michael Gauthier",
-			"email" : "mike@silverorange.com"
-		}
-	],
-	"require": {
-		"php": ">=5.5.9",
-		"pear/pear-core-minimal": "^1.9.0",
-		"pear/console_commandline": "^1.1.10",
-		"symfony/yaml": "^3.0.0"
-	},
-	"suggest": {
-		"ext-memcached": "Allows caching resource definition YAML files between requests."
-	},
-	"bin": [
-		"scripts/concentrate"
-	],
-	"autoload": {
-		"psr-0": {
-			"Concentrate" : ""
-		}
-	},
-	"include-path": [
-		"./"
-	],
-	"require-dev": {
-		"silverorange/coding-standard": "^0.1.0"
-	},
+  "name": "silverorange/concentrate",
+  "description" : "This package provides a command-line tool to glob and minify static resources for a website using silverorange's Site package. Files are combined according to a configuration file passed on the command-line.",
+  "type": "library",
+  "keywords": [ "bundle", "minification", "css", "javascript", "less" ],
+  "homepage": "https://github.com/silverorange/Concentrate",
+  "license": "LGPL-2.1",
+  "authors": [
+    {
+      "name"  : "Michael Gauthier",
+      "email" : "mike@silverorange.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "pear/pear-core-minimal": "^1.9.0",
+    "pear/console_commandline": "^1.1.10",
+    "symfony/yaml": "^3.0.0"
+  },
+  "require-dev": {
+    "silverorange/coding-standard": "^0.1.0"
+  },
+  "suggest": {
+    "ext-memcached": "Allows caching resource definition YAML files between requests."
+  },
   "scripts": {
     "post-install-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/silverorange/coding-standard/src",
     "post-update-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/silverorange/coding-standard/src"
-  }
+  },
+  "bin": [
+    "scripts/concentrate"
+  ],
+  "autoload": {
+    "psr-0": {
+      "Concentrate" : ""
+    }
+  },
+  "include-path": [
+    "./"
+  ]
 }
